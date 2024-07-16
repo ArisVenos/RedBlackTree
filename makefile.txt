@@ -1,0 +1,16 @@
+objects = rbtreeimp.o main.o
+
+test : $(objects)
+	gcc $(objects) -o test
+	
+main.o : main.c  RBT.h
+	gcc -c main.c
+
+rbtreeimp.o : rbtreeimp.c RBT.h
+	gcc -c rbtreeimp.c
+
+clean :
+	rm test $(objects)
+run :
+	./test 
+	
